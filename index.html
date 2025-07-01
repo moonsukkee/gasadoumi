@@ -1,0 +1,14 @@
+
+<!-- head 안 어딘가에 추가 -->
+<script>
+  if (window.location.href.includes('ngrok')) {
+    const visited = sessionStorage.getItem('ngrok-visited');
+    if (!visited) {
+      sessionStorage.setItem('ngrok-visited', 'true');
+      if (!window.location.hash.includes('ngrok-skip-browser-warning')) {
+        window.location.href = window.location.href + '#ngrok-skip-browser-warning';
+      }
+    }
+  }
+</script>
+
